@@ -29,8 +29,7 @@ attachClickHandler = function() {
 		toggleLight(element);
 		
 		if(!didWin()) {
-			numMoves++;
-			$('.moves').text(numMoves);
+			$('.moves').text(++numMoves);
 		} else {
 			alert('success');
 		}
