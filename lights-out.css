@@ -10,6 +10,10 @@
 	font-weight: normal;
 }
 
+.bottom-text {
+	text-align: center;
+}
+
 .game {
 	width: 270px;
 }
