@@ -1,25 +1,37 @@
 .header {
-	text-align: center;
+	width: 50%;
+    margin: 0 auto;
 	font-size: 2em;
 	font-weight: bold;
 	margin-bottom: 5px;
+	text-align: center;
 }
 
 .header.sub {
 	font-size: 1em;
 	font-weight: normal;
-}
-
-.bottom-text {
 	text-align: center;
 }
 
-.game {
-	width: 270px;
+.bottom-text {
+	width: 50%;
+    margin: 0 auto;
+	text-align: center;
+}
+
+.container {
+	width: 100%;
+}
+
+.game-board {
+	display: table;
+    margin: 0 auto;
 }
 
 .row {
     clear: both;
+	margin: 0px auto;
+	overflow:auto;
 }
 
 .circle {

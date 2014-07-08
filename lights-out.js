@@ -1,10 +1,24 @@
 var numMoves = 0;
 
 $(document).ready(function(){
-    randomizeLights(10);
+    createGameBoard(10, 10);
+		
+	randomizeLights(10);
 	
 	attachClickHandler();
 });
+
+createGameBoard = function(width, height) {
+	for(i=0;i<height;i++) {
+	   $(".game-board").append("<div class='row'></div>")
+	}
+    
+	$(".row").each(function() {
+		for(i=0;i<width;i++) {
+	    	$(this).append("<div class='circle'></div>")
+		}    
+	});
+}
 
 randomizeLights = function(numberToTurnOn) {
 	randomElements = $(".circle").get().sort(function(){ 
@@ -15,7 +29,7 @@ randomizeLights = function(numberToTurnOn) {
 }
 
 attachClickHandler = function() {
-    $('.game').delegate('.circle', 'click', function() {
+    $('.container').delegate('.circle', 'click', function() {
         $(this).toggleClass('on');
 		$(this).next().toggleClass('on');
 		$(this).prev().toggleClass('on');
