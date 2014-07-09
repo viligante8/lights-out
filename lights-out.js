@@ -8,6 +8,7 @@ $(document).ready(function(){
 
 startGame = function() {
 	numMoves = 0;
+	$('.moves').text(numMoves);
     createGameBoard(width, height);
 		
 	randomizeLights(10);
