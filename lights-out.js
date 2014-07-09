@@ -11,7 +11,7 @@ startGame = function() {
 	$('.moves').text(numMoves);
     createGameBoard(width, height);
 		
-	randomizeLights(10);
+	randomizeLights(Math.floor(Math.random() * (width * height) - 1) + 1);
 	
 	attachClickHandlers();
 }
