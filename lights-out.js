@@ -1,14 +1,28 @@
 var numMoves = 0;
+var width = 5;
+var height = 5;
 
 $(document).ready(function(){
-    createGameBoard(10, 10);
+    startGame();
+});
+
+startGame = function() {
+	numMoves = 0;
+    createGameBoard(width, height);
 		
 	randomizeLights(10);
 	
-	attachClickHandler();
-});
+	attachClickHandlers();
+}
+
+getGameBoardSize = function() {
+	width = $('.width').val();
+	height = $('.height').val();
+}
 
 createGameBoard = function(width, height) {
+	$(".game-board").empty();
+	
 	for(i=0;i<height;i++) {
 	   $(".game-board").append("<div class='row'></div>")
 	}
@@ -28,7 +42,18 @@ randomizeLights = function(numberToTurnOn) {
 	$(randomElements).toggleClass('on');
 }
 
-attachClickHandler = function() {
+attachClickHandlers = function() {
+	$('input').off();
+	$('input').on('click', function(evt) {
+		evt.preventDefault();
+		evt.stopPropagation();
+		
+		getGameBoardSize();
+		
+		startGame();
+	});
+	
+	$('.container').undelegate();
     $('.container').delegate('.circle', 'click', function() {
         $(this).toggleClass('on');
 		$(this).next().toggleClass('on');

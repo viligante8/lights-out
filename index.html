@@ -4,8 +4,10 @@
 		<title>
 			Lights Out
 		</title>
-		<script type='text/javascript' src="jquery.js"></script>
-		<script type='text/javascript' src="lights-out.js"></script>
+		<script type='text/javascript' src="jquery.js">
+</script>
+		<script type='text/javascript' src="lights-out.js">
+</script>
 		<link type="text/css" rel="stylesheet" href="lights-out.css">
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 	</head>
@@ -17,10 +19,30 @@
 			<div class='header sub'>
 				Turn off all the lights to win!
 			</div>
-			
-			<div class="game-board">
+			<div class="new-game-settings">
+				Width: 
+				<select class="width" >
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+				Height: 
+				<select class="height" >
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+				<input type="button" value="New Game" ></input>
 			</div>
-			
+			<div class="game-board"></div>
 			<div class="bottom-text">
 				Number of moves: <span class="moves">0</span>
 			</div>
